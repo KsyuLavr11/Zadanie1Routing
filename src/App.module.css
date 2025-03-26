@@ -1,0 +1,250 @@
+.todo-list {
+	overflow-y: auto;
+	text-align: left;
+	font-size: 60%;
+	background-color: rgb(225, 248, 240);
+	border: 1px solid rgb(33, 24, 117);
+	justify-content: end;
+}
+
+.button {
+	margin-right: 5px;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	font-size: 50%;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: rgb(108, 130, 230);
+	border: 1px solid rgb(33, 24, 117);
+	cursor: pointer;
+	margin: 1% auto;
+	display: flex;
+}
+.button:active {
+	background-color: blue;
+	border: 3px solid rgb(33, 24, 117);
+}
+.sort-button {
+	margin-right: 5px;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	font-size: 50%;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: rgb(108, 130, 230);
+	border: 1px solid rgb(33, 24, 117);
+	cursor: pointer;
+	margin: 1% auto;
+	width: 300px;
+	align-self: flex-start;
+	transform: translate(-237px);
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+.sort-button:active {
+	background-color: rgb(34, 189, 181);
+	border: 3px solid rgb(33, 24, 117);
+}
+.button-todos {
+	float: right;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	font-size: 60%;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: rgb(247, 248, 151);
+	border: 1px solid rgb(33, 24, 117);
+	cursor: pointer;
+	margin: 0.5% auto;
+	width: 150px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.button-todos:active {
+	background-color: rgb(224, 248, 5);
+	border: 3px solid rgb(33, 24, 117);
+}
+.button-todos-save {
+	border-radius: 4px;
+	border: 1px solid transparent;
+	font-size: 60%;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: rgb(247, 248, 151);
+	border: 1px solid rgb(33, 24, 117);
+	cursor: pointer;
+	margin: 0.5% auto;
+	width: 150px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.button-todos-save:active {
+	background-color: rgb(224, 248, 5);
+	border: 3px solid rgb(33, 24, 117);
+}
+.button-todos-cancel {
+	border-radius: 4px;
+	border: 1px solid transparent;
+	font-size: 60%;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: rgb(245, 159, 159);
+	border: 1px solid rgb(33, 24, 117);
+	cursor: pointer;
+	margin: 0.5% auto;
+	width: 150px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.button-todos-cancel:active {
+	background-color: rgb(240, 11, 11);
+	border: 3px solid rgb(33, 24, 117);
+}
+
+.button-todos-delete {
+	float: right;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	font-size: 60%;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: rgb(245, 159, 159);
+	border: 1px solid rgb(33, 24, 117);
+	cursor: pointer;
+	margin: 0.5% auto;
+	width: 150px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.button-todos-delete:active {
+	background-color: rgb(240, 11, 11);
+	border: 3px solid rgb(33, 24, 117);
+}
+.input {
+	padding: 8px;
+	border-radius: 4px;
+	border: 1px solid rgb(33, 24, 117);
+	margin: auto;
+	width: 600px;
+	height: 30px;
+}
+.error {
+	color: red;
+	font-size: 60%;
+}
+.loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 25px;
+	height: 25px;
+	border: 5 px solid indigo;
+	border-radius: 50%;
+	border-left-color: transparent;
+	animation: loader 1s infinite;
+}
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.search-container {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	justify-content: end;
+	padding: 10px;
+}
+.input-search {
+	padding: 8px;
+	border-radius: 4px;
+	border: 1px solid rgb(33, 24, 117);
+	margin: auto;
+	width: 757px;
+	height: 30px;
+}
+.add-todo-container {
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	display: flex;
+	gap: 5px;
+	transform: (-20);
+}
+.todo-list-container {
+	display: grid;
+	overflow-y: auto;
+	text-align: left;
+	font-size: 60%;
+	background-color: rgb(225, 248, 240);
+	border: 1px solid rgb(33, 24, 117);
+	grid-template-columns: 1fr;
+	gap: 10px;
+	width: 100%;
+}
+.todo-item {
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+}
+.add-todo-container-search {
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	display: flex;
+	gap: 5px;
+}
+:global .active {
+	text-decoration: blue wavy underline;
+	color: darkblue;
+}
+.task-page {
+	margin: auto;
+	float: left;
+	display: flow;
+	align-items: center;
+	text-align: center;
+}
+
+.task-page-container {
+	height: 300px;
+	width: 600px;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	text-align: left;
+	align-items: center;
+	box-sizing: border-box;
+	font-size: 60%;
+	background-color: rgb(225, 248, 240);
+	border: 1px solid rgb(33, 24, 117);
+	grid-template-columns: 1fr;
+	gap: 10px;
+}
+.button-back {
+	margin-right: 5px;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	font-size: 70%;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: rgb(108, 130, 230);
+	border: 1px solid rgb(33, 24, 117);
+	cursor: pointer;
+	margin: 1% auto;
+	display: flex;
+}

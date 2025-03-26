@@ -1,0 +1,17 @@
+:root {
+	background-color: lightskyblue;
+	text-align: center;
+	color: indigo;
+	font-weight: bold;
+	font-size: 200%;
+}
+.app {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	width: 600 px;
+	box-sizing: border-box;
+}
