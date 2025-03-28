@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { todosAPI } from '../api/todosAPI';
 import { filterTodos } from '../components/helpers/filterTodos';
 import { sortTodos } from '../components/helpers/sortTodos';
-import { useNavigate } from 'react-router-dom';
 
 export const useTodos = () => {
 	const [todos, setTodos] = useState([]);
@@ -10,8 +9,6 @@ export const useTodos = () => {
 	const [error, setError] = useState(null);
 	const [isSort, setIsSort] = useState(true);
 	const [searchTerm, setSearchTerm] = useState('');
-
-	const navigate = useNavigate();
 
 	useEffect(() => {
 		readTodos();
@@ -43,7 +40,6 @@ export const useTodos = () => {
 	};
 	const updateTodo = async (todoId, newTitle) => {
 		setIsLoading(true);
-
 		try {
 			await todosAPI.update(todoId, newTitle);
 			setTodos((prevTodos) =>
@@ -66,9 +62,6 @@ export const useTodos = () => {
 			setError(error);
 		} finally {
 			setIsLoading(false);
-			setTimeout(() => {
-				navigate(-1);
-			}, 5000);
 		}
 	};
 

@@ -3,19 +3,22 @@ import styles from '../../App.module.css';
 
 export const ControlPanel = ({ createTodo, isLoading, isSort, setIsSort }) => {
 	const [title, setTitle] = useState('');
+	const [completed, setCompleted] = useState(false);
 
 	const handleAddTodo = () => {
 		if (title.trim()) {
-			createTodo(title);
+			createTodo({ title, completed });
+			setTitle('');
 		}
 	};
 
 	const handleSumbit = (event) => {
 		event.preventDefault();
-		if (title.trim()) {
-			createTodo({ title });
-			setTitle('');
-		}
+		handleAddTodo();
+	};
+
+	const handlerCheckbox = (event) => {
+		setCompleted(event.target.checked);
 	};
 
 	return (
@@ -24,12 +27,18 @@ export const ControlPanel = ({ createTodo, isLoading, isSort, setIsSort }) => {
 			<form onSubmit={handleSumbit}>
 				<div className={styles['add-todo-container']}>
 					<input
-						className={styles.input}
+						className={styles['input-control-panel']}
 						type="text"
 						name="text"
 						value={title}
 						placeholder="Ведите название дела"
 						onChange={(event) => setTitle(event.target.value)}
+					/>
+					<input
+						className={styles['checkbox-CP']}
+						type="checkbox"
+						checked={completed}
+						onChange={handlerCheckbox}
 					/>
 					<button
 						disabled={isLoading}

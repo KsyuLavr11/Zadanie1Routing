@@ -17,7 +17,7 @@ export const todosAPI = {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ title: newTodos }),
+			body: JSON.stringify(newTodos),
 		});
 		if (!response.ok) {
 			throw new Error('Ошибка при добавлении задачи');
@@ -25,14 +25,10 @@ export const todosAPI = {
 		return await response.json();
 	},
 	update: async (id, newTitle) => {
-		console.log('newTitle', newTitle);
-		console.log('id', id);
 		const response = await fetch(BASE_URL + TODOS_ENDPOINT + `${id}`, {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json;charset=utf-8' },
-			body: JSON.stringify({
-				title: newTitle,
-			}),
+			body: JSON.stringify(newTitle),
 		});
 		if (!response.ok) {
 			throw new Error('Ошибка при изменении задачи');
@@ -47,5 +43,12 @@ export const todosAPI = {
 			throw new Error('Ошибка при удалении задачи');
 		}
 		return;
+	},
+	getTodoById: async (id) => {
+		const response = await fetch(BASE_URL + TODOS_ENDPOINT + `${id}`);
+		if (!response.ok) {
+			throw new Error('Ошибка при выполнении запроса');
+		}
+		return await response.json();
 	},
 };
